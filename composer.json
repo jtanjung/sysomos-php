@@ -1,0 +1,41 @@
+{
+  "name": "jojokhaled/research",
+  "description": "PHP package to load sysomos analityc data via CURL",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Julian Tanjung",
+      "email": "gudangsoft@gmail.com",
+      "homepage": "http://binarylab.org",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+      "process-timeout": 1800
+  },
+  "autoload": {
+    "psr-4": {
+      "SysOmos\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "jtanjung/php-miscellaneous": "dev-devres"
+  },
+  "scripts": {
+      "post-install-cmd": [
+          "sudo chmod 777 cookie",
+          "sudo chmod 777 temp"
+      ],
+      "post-update-cmd": [
+        "sudo chmod 777 cookie",
+        "sudo chmod 777 temp"
+      ]
+    },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/jtanjung/php-miscellaneous.git"
+    }
+  ]
+}
